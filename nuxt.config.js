@@ -46,4 +46,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  router: {
+    path: '/admin',
+    component: 'netlify-cms-app/dist/index.js',
+    meta: {
+      layout: 'default',
+    },
+  },
 }
