@@ -2,8 +2,9 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/uploads
-public_folder: /uploads
+# Media and Public Folders https://www.netlifycms.org/docs/configuration-options/#media-and-public-folders
+media_folder: 'static/images/uploads' # Media files will be stored in the repo under images/uploads
+public_folder: '/images/uploads'
 
 collections:
   - name: post
@@ -13,3 +14,17 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'app/content/pages'
+    create: true
+    slug: '{{slug}}'
+    format: 'json'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: text, required: false }
+      - { label: Content, name: content, widget: markdown }
+      - { label: 'Featured Image', name: featuredImage, widget: image, required: false }
+      - { label: 'SEO Description', name: seoDescription, widget: text, required: false }
+      - { label: 'SEO Meta Image', name: seoMetaImage, widget: image, required: false }

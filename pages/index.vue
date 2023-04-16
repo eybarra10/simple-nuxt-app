@@ -62,7 +62,7 @@ const validEmail = (email): boolean => {
 }
 
 const handleSubmit = async (): Promise<void> => {
-  if (!validEmail(this.form.email)) {
+  if (!validEmail(email.value)) {
     // this.$refs.emailInput.focus();
     return;
   }
