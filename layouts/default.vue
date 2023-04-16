@@ -12,7 +12,7 @@
   </main>
 </template>
 
-<style lang="scss">
+<style lang="css">
 .divider {
   position: relative;
   min-width: 100vw;
